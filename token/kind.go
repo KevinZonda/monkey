@@ -12,8 +12,15 @@ const (
 	STRING = "STRING"
 	FLOAT  = "FLOAT"
 
-	ASSIGN = ":="
-	PLUS   = "+"
+	ASSIGN   = ":="
+	PLUS     = "+"
+	MINUS    = "-"
+	MULTIPLY = "*"
+	DIVIDE   = "/"
+	BANG     = "!"
+
+	LESS_THAN    = "<"
+	GREATER_THAN = ">"
 
 	COMMA     = ","
 	SEMICOLON = ";"
@@ -25,4 +32,12 @@ const (
 
 	FUNC = "FUNC"
 	LET  = "LET"
+
+	IF     = "IF"
+	ELSE   = "ELSE"
+	TRUE   = "TRUE"
+	FALSE  = "FALSE"
+	RETURN = "RETURN"
+	EQUAL  = "=="
+	NOT_EQ = "!="
 )

@@ -13,6 +13,11 @@ func (l *Lexer) readIdentifier() string {
 var reservedKeywords = map[string]token.TokenKind{
 	"fn":  token.FUNC,
 	"let": token.LET,
+	"if":  token.IF,
+	"else": token.ELSE,
+	"true": token.TRUE,
+	"false": token.FALSE,
+	"return": token.RETURN,
 }
 
 func mapIdentifier(ident string) token.TokenKind {
