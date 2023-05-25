@@ -1,7 +1,25 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+	"github.com/KevinZonda/monkey/lexer"
+	"github.com/KevinZonda/monkey/token"
+	"github.com/chzyer/readline"
+)
 
 func main() {
-	fmt.Println("Hello, world!")
+	for {
+		ln, err := readline.Line(">> ")
+		if err != nil {
+			if errors.Is(err, readline.ErrInterrupt) {
+				break
+			}
+			panic(err)
+		}
+		lex := lexer.New(ln)
+		for tok := lex.NextToken(); tok.Kind != token.EOF; tok = lex.NextToken() {
+			fmt.Println(tok.Literal, "::", tok.Kind)
+		}
+	}
 }
